@@ -1,2 +1,2 @@
-# design-patterns
-Collection of design pattern code samples
+# leetcode
+Testing out uploading solutions to leetcode problem in Java
