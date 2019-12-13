@@ -3,9 +3,22 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Example of what a solution to a <a href="https://leetcode.com/">LeetCode</a>
+ * problem can look like.
+ * 
+ * @author Laurent Eriksen
+ */
 public class Solution {
 
-	private static HashMap<String, Boolean> examples = new HashMap<>();
+	private static void addExamples() {
+		examples.put("ExampleInput", true);
+	}
+
+	private static Boolean problemSolvingMethod(String input) {
+		// TODO write code to solve the problem
+		return true;
+	}
 
 	public static void run() {
 		addExamples();
@@ -18,27 +31,23 @@ public class Solution {
 
 			try {
 				if (myOutput.compareTo(exampleOutput) != 0) {
-					System.out.println("Input:    " + exampleInput.toString());
-					System.out.println("Expected: " + exampleOutput.toString());
-					System.out.println("Returned: " + myOutput.toString());
+					System.out.println(className + ": Failed. Details:");
+					System.out.println("\tInput:    " + exampleInput.toString());
+					System.out.println("\tExpected: " + exampleOutput.toString());
+					System.out.println("\tReturned: " + myOutput.toString());
 					return;
 				}
 			} catch (NullPointerException e) {
-				System.out.println("NullPointerException on calculating result for: " + exampleInput.toString());
+				System.out.println(className + ": Failed. Details:");
+				System.out.println("\tNullPointerException on calculating result for: " + exampleInput.toString());
 				return;
 			}
 		}
 
-		System.out.println("Success!");
+		System.out.println(className + ": Success!");
 	}
 
-	public static void addExamples() {
-		examples.put("ExampleInput", true);
-	}
-
-	private static Boolean problemSolvingMethod(String input) {
-		// TODO write code to solve the problem
-		return true;
-	}
+	private static HashMap<String, Boolean> examples = new HashMap<>();
+	private static String className = Solution.class.getName();
 
 }
