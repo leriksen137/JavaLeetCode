@@ -1,37 +1,53 @@
 package leetcode;
 
-import java.util.Vector;
+import java.util.HashMap;
+import java.util.Map;
 
-class Solution<Input, Output> {
+/**
+ * Example of what a solution to a <a href="https://leetcode.com/">LeetCode</a>
+ * problem can look like.
+ * 
+ * @author Laurent Eriksen
+ */
+public class Solution {
 
-	private Vector<Example<Input, Output>> examples = new Vector<Example<Input, Output>>();
-
-	public void addExamples() {
-		// TODO add examples to the "examples" vector in the following form:
-		examples.add(new Example<Input, Output>(null, null));
+	private static void addExamples() {
+		examples.put("ExampleInput", true);
 	}
 
-	public void run() {
-		if (examples.isEmpty()) {
-			throw new IllegalStateException("No examples were added");
-		}
+	private static Boolean problemSolvingMethod(String input) {
+		// TODO write code to solve the problem
+		return true;
+	}
 
-		for (Example<Input, Output> example : examples) {
-			Output exampleOutput = generateOutputForInput(example.getInput());
-			if (!example.getOutput().equals(exampleOutput)) {
-				System.out.println(
-						"Expected: " + example.getOutput().toString() + "\nReturned: " + exampleOutput.toString());
+	public static void run() {
+		addExamples();
+
+		for (Map.Entry<String, Boolean> example : examples.entrySet()) {
+			String exampleInput = example.getKey();
+			Boolean exampleOutput = example.getValue();
+
+			Boolean myOutput = problemSolvingMethod(exampleInput);
+
+			try {
+				if (myOutput.compareTo(exampleOutput) != 0) {
+					System.out.println(className + ": Failed. Details:");
+					System.out.println("\tInput:    " + exampleInput.toString());
+					System.out.println("\tExpected: " + exampleOutput.toString());
+					System.out.println("\tReturned: " + myOutput.toString());
+					return;
+				}
+			} catch (NullPointerException e) {
+				System.out.println(className + ": Failed. Details:");
+				System.out.println("\tNullPointerException on calculating result for: " + exampleInput.toString());
 				return;
 			}
 		}
 
-		System.out.println("Success!");
+		System.out.println(className + ": Success!");
 	}
 
-	// TODO refactor method name and write solution code
-	private Output generateOutputForInput(Input input) {
-
-		return null;
-	}
+	private static HashMap<String, Boolean> examples = new HashMap<>();
+	private static String className = Solution.class.getName();
 
 }

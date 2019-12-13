@@ -3,12 +3,8 @@ package leetcode;
 public class RunLeetCodeProblem {
 
 	public static void main(String[] args) {
+		Solution.run();
+		Solution20ValidParentheses.run();
 
-		Solution<String, Boolean> solution = new Solution<>();
-
-		solution.addExamples();
-
-		solution.run();
 	}
-
 }
