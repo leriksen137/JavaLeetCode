@@ -1,26 +1,30 @@
 package leetcode;
 
-import java.util.Vector;
+import java.util.HashMap;
+import java.util.Map;
 
-class Solution<Input, Output> {
+public class Solution {
 
-	private Vector<Example<Input, Output>> examples = new Vector<Example<Input, Output>>();
+	private static HashMap<String, Boolean> examples = new HashMap<>();
 
-	public void addExamples() {
-		// TODO add examples to the "examples" vector in the following form:
-		examples.add(new Example<Input, Output>(null, null));
-	}
+	public static void run() {
+		addExamples();
 
-	public void run() {
-		if (examples.isEmpty()) {
-			throw new IllegalStateException("No examples were added");
-		}
+		for (Map.Entry<String, Boolean> example : examples.entrySet()) {
+			String exampleInput = example.getKey();
+			Boolean exampleOutput = example.getValue();
 
-		for (Example<Input, Output> example : examples) {
-			Output exampleOutput = generateOutputForInput(example.getInput());
-			if (!example.getOutput().equals(exampleOutput)) {
-				System.out.println(
-						"Expected: " + example.getOutput().toString() + "\nReturned: " + exampleOutput.toString());
+			Boolean myOutput = problemSolvingMethod(exampleInput);
+
+			try {
+				if (myOutput.compareTo(exampleOutput) != 0) {
+					System.out.println("Input:    " + exampleInput.toString());
+					System.out.println("Expected: " + exampleOutput.toString());
+					System.out.println("Returned: " + myOutput.toString());
+					return;
+				}
+			} catch (NullPointerException e) {
+				System.out.println("NullPointerException on calculating result for: " + exampleInput.toString());
 				return;
 			}
 		}
@@ -28,10 +32,13 @@ class Solution<Input, Output> {
 		System.out.println("Success!");
 	}
 
-	// TODO refactor method name and write solution code
-	private Output generateOutputForInput(Input input) {
+	public static void addExamples() {
+		examples.put("ExampleInput", true);
+	}
 
-		return null;
+	private static Boolean problemSolvingMethod(String input) {
+		// TODO write code to solve the problem
+		return true;
 	}
 
 }
