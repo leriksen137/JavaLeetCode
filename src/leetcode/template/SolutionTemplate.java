@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.template;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,22 +7,31 @@ import java.util.Map;
  * Example of what a solution to a <a href="https://leetcode.com/">LeetCode</a>
  * problem can look like.
  * 
+ * Follow all comments marked TODO for
+ * 
  * @author Laurent Eriksen
  */
-public class Solution {
+public class SolutionTemplate {
 
-	private static boolean problemSolvingMethod(String input) {
+	// TODO change method signature to fit the problem
+	public boolean problemSolvingMethod(String input) {
 		// TODO write code to solve the problem
+
 		return true;
 	}
 
-	private static void addExamples() {
-		examples.put("ExampleInput", true);
+	// TODO Change generic types to fit leetcode input and output type
+	private HashMap<String, Boolean> examples = new HashMap<>();
+
+	private void addExamples() {
+		// TODO Add examples
+		examples.put("ExampleInput", "ExampleOutput".isEmpty());
 	}
 
-	public static void run() {
+	public void run() {
 		addExamples();
 
+		// TODO Change generic types to fit leetcode input and output type
 		for (Map.Entry<String, Boolean> example : examples.entrySet()) {
 			String exampleInput = example.getKey();
 			Boolean exampleOutput = example.getValue();
@@ -47,7 +56,6 @@ public class Solution {
 		System.out.println(className + ": Success!");
 	}
 
-	private static HashMap<String, Boolean> examples = new HashMap<>();
-	private static String className = Solution.class.getName();
+	private String className = SolutionTemplate.class.getName();
 
 }

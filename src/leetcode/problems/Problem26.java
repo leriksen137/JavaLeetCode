@@ -1,7 +1,9 @@
-package leetcode;
+package leetcode.problems;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import leetcode.helper.PrimitiveIntArrayWrapper;
 
 /**
  * Solution to <a href=
@@ -10,9 +12,9 @@ import java.util.Map;
  * 
  * @author Laurent Eriksen
  */
-public class Solution26RemoveDuplicatesFromSortedArray {
+public class Problem26 {
 
-	private static int removeDuplicates(int[] nums) {
+	public int removeDuplicates(int[] nums) {
 		if (nums.length < 2) {
 			return nums.length;
 		}
@@ -26,12 +28,14 @@ public class Solution26RemoveDuplicatesFromSortedArray {
 		return insertIndex;
 	}
 
-	private static void addExamples() {
+	private HashMap<PrimitiveIntArrayWrapper, Integer> examples = new HashMap<>();
+
+	private void addExamples() {
 		examples.put(new PrimitiveIntArrayWrapper(new int[] { 1, 1, 2 }), 2);
 		examples.put(new PrimitiveIntArrayWrapper(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }), 5);
 	}
 
-	public static void run() {
+	public void run() {
 		addExamples();
 
 		for (Map.Entry<PrimitiveIntArrayWrapper, Integer> example : examples.entrySet()) {
@@ -58,8 +62,6 @@ public class Solution26RemoveDuplicatesFromSortedArray {
 		System.out.println(className + ": Success!");
 	}
 
-	private static HashMap<PrimitiveIntArrayWrapper, Integer> examples = new HashMap<>();
-
-	private static String className = Solution26RemoveDuplicatesFromSortedArray.class.getName();
+	private String className = Problem26.class.getName();
 
 }

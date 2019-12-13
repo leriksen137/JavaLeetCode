@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.helper;
 
 /**
  * Helper Class for Problem26

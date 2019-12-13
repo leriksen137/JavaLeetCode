@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,9 @@ import java.util.Stack;
  * 
  * @author Laurent Eriksen
  */
-public class Solution20ValidParentheses {
+public class Problem20 {
 
-	private static boolean isValid(String input) {
+	public boolean isValid(String input) {
 
 		Map<Character, Character> bracketMap = new HashMap<Character, Character>() {
 			private static final long serialVersionUID = 1L;
@@ -50,7 +50,9 @@ public class Solution20ValidParentheses {
 		return true;
 	}
 
-	private static void addExamples() {
+	private HashMap<String, Boolean> examples = new HashMap<>();
+
+	private void addExamples() {
 		examples.put("()", true);
 		examples.put("()[]{}", true);
 		examples.put("(]", false);
@@ -58,7 +60,7 @@ public class Solution20ValidParentheses {
 		examples.put("{[]}", true);
 	}
 
-	public static void run() {
+	public void run() {
 		addExamples();
 
 		for (Map.Entry<String, Boolean> example : examples.entrySet()) {
@@ -85,7 +87,6 @@ public class Solution20ValidParentheses {
 		System.out.println(className + ": Success!");
 	}
 
-	private static HashMap<String, Boolean> examples = new HashMap<>();
-	private static String className = Solution20ValidParentheses.class.getName();
+	private String className = Problem20.class.getName();
 
 }
