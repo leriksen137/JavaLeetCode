@@ -50,6 +50,14 @@ public class Solution20ValidParentheses {
 		return true;
 	}
 
+	private static void addExamples() {
+		examples.put("()", true);
+		examples.put("()[]{}", true);
+		examples.put("(]", false);
+		examples.put("([)]", false);
+		examples.put("{[]}", true);
+	}
+
 	public static void run() {
 		addExamples();
 
@@ -75,14 +83,6 @@ public class Solution20ValidParentheses {
 		}
 
 		System.out.println(className + ": Success!");
-	}
-
-	private static void addExamples() {
-		examples.put("()", true);
-		examples.put("()[]{}", true);
-		examples.put("(]", false);
-		examples.put("([)]", false);
-		examples.put("{[]}", true);
 	}
 
 	private static HashMap<String, Boolean> examples = new HashMap<>();

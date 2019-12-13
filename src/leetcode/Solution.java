@@ -11,13 +11,13 @@ import java.util.Map;
  */
 public class Solution {
 
-	private static void addExamples() {
-		examples.put("ExampleInput", true);
-	}
-
-	private static Boolean problemSolvingMethod(String input) {
+	private static boolean problemSolvingMethod(String input) {
 		// TODO write code to solve the problem
 		return true;
+	}
+
+	private static void addExamples() {
+		examples.put("ExampleInput", true);
 	}
 
 	public static void run() {
