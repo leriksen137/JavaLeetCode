@@ -4,13 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+import leetcode.template.LeetCode;
+
 /**
  * Solution to <a href="https://leetcode.com/problems/valid-parentheses/">Valid
  * Parentheses</a>
  * 
  * @author leriksen137
  */
-public class Problem20 {
+public class Problem20 implements LeetCode {
 
 	public boolean isValid(String input) {
 
@@ -60,6 +62,7 @@ public class Problem20 {
 		examples.put("{[]}", true);
 	}
 
+	@Override
 	public void run() {
 		// this method was built on an old version of a problem template.
 

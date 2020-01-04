@@ -8,7 +8,7 @@ package leetcode.template;
  * 
  * @author leriksen137
  */
-public class ProblemXYZ {
+public class ProblemXYZ implements LeetCode {
 	// TODO change XYZ to problem number, update URL and PROBLEMNAME in javadoc
 
 	// TODO copy problem Signature from specific leetcode problem.
@@ -16,6 +16,7 @@ public class ProblemXYZ {
 		return "solution";
 	}
 
+	@Override
 	public void run() {
 		// TODO generate input arguments
 		int[] inputArgument = new int[] { 1, 2, 3, 4 };

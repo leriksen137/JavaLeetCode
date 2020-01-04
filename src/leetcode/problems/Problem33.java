@@ -2,6 +2,8 @@ package leetcode.problems;
 
 import java.util.Arrays;
 
+import leetcode.template.LeetCode;
+
 /**
  * Solution to <a href=
  * "https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in
@@ -9,7 +11,7 @@ import java.util.Arrays;
  * 
  * @author leriksen137
  */
-public class Problem33 {
+public class Problem33 implements LeetCode {
 
 	public int search(int[] nums, int target) {
 		// catch special cases
@@ -73,6 +75,7 @@ public class Problem33 {
 		return -1; // element not found
 	}
 
+	@Override
 	public void run() {
 
 		int[] nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };

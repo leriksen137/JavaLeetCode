@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import leetcode.helper.PrimitiveIntArrayWrapper;
+import leetcode.template.LeetCode;
 
 /**
  * Solution to <a href=
@@ -12,7 +13,7 @@ import leetcode.helper.PrimitiveIntArrayWrapper;
  * 
  * @author leriksen137
  */
-public class Problem26 {
+public class Problem26 implements LeetCode {
 
 	public int removeDuplicates(int[] nums) {
 		if (nums.length < 2) {
@@ -35,6 +36,7 @@ public class Problem26 {
 		examples.put(new PrimitiveIntArrayWrapper(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }), 5);
 	}
 
+	@Override
 	public void run() {
 		// this method was built on an old version of a problem template.
 

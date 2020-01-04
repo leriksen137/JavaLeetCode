@@ -1,6 +1,7 @@
 package leetcode.problems;
 
 import leetcode.datastructures.ListNode;
+import leetcode.template.LeetCode;
 
 /**
  * Solution to <a href=
@@ -9,7 +10,7 @@ import leetcode.datastructures.ListNode;
  * 
  * @author leriksen137
  */
-public class Problem19 {
+public class Problem19 implements LeetCode {
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		ListNode headCopy = head;
@@ -31,6 +32,7 @@ public class Problem19 {
 		return headCopy;
 	}
 
+	@Override
 	public void run() {
 		ListNode head = ListNode.fromArray(new int[] { 1, 2, 3, 4, 5 });
 		int n = 2; // remove second to last element

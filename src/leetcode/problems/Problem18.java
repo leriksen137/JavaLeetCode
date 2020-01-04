@@ -6,13 +6,14 @@ import java.util.HashSet;
 import java.util.List;
 
 import leetcode.helper.ListUtil;
+import leetcode.template.LeetCode;
 
 /**
  * Solution to <a href= "https://leetcode.com/problems/4sum/">4Sum</a>
  * 
  * @author leriksen137
  */
-public class Problem18 {
+public class Problem18 implements LeetCode {
 
 	public List<List<Integer>> fourSum(int[] nums, int target) {
 		HashSet<List<Integer>> solutionSet = new HashSet<>();
@@ -35,6 +36,7 @@ public class Problem18 {
 		return new ArrayList<List<Integer>>(solutionSet);
 	}
 
+	@Override
 	public void run() {
 		int[] nums = new int[] { 1, 0, -1, 0, -2, 2 };
 		int target = 0;
