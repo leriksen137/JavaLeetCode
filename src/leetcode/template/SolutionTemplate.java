@@ -40,22 +40,18 @@ public class SolutionTemplate {
 
 			try {
 				if (myOutput.compareTo(exampleOutput) != 0) {
-					System.out.println(className + ": Failed. Details:");
+					System.out.println("Failed");
 					System.out.println("\tInput:    " + exampleInput.toString());
 					System.out.println("\tExpected: " + exampleOutput.toString());
 					System.out.println("\tReturned: " + myOutput.toString());
 					return;
 				}
 			} catch (NullPointerException e) {
-				System.out.println(className + ": Failed. Details:");
+				System.out.println("Failed");
 				System.out.println("\tNullPointerException on calculating result for: " + exampleInput.toString());
 				return;
 			}
 		}
 
-		System.out.println(className + ": Success!");
 	}
-
-	private String className = SolutionTemplate.class.getName();
-
 }

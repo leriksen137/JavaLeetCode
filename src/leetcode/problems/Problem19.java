@@ -39,10 +39,5 @@ public class Problem19 {
 		removeNthFromEnd(head, 5);
 
 		ListNode.printLinkedList(head);
-
-		System.out.println(className + ": Success!");
 	}
-
-	private String className = Problem19.class.getName();
-
 }

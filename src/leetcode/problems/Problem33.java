@@ -79,27 +79,23 @@ public class Problem33 {
 		int target = 0;
 
 		if (search(nums, target) != -1) {
-			System.out.println(className + ": Failed");
+			System.out.println("Failed");
 			return;
 		}
 
 		nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
 		target = 5;
 		if (search(nums, target) != 1) {
-			System.out.println(className + ": Failed");
+			System.out.println("Failed");
 			return;
 		}
 
 		nums = new int[] { 1, 3 };
 		target = 2;
 		if (search(nums, target) != -1) {
-			System.out.println(className + ": Failed");
+			System.out.println("Failed");
 			return;
 		}
 
-		System.out.println(className + ": Success!");
 	}
-
-	private String className = Problem33.class.getName();
-
 }

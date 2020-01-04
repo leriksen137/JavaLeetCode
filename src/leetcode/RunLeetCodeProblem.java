@@ -1,25 +1,31 @@
 package leetcode;
 
-import leetcode.problems.Problem19;
-import leetcode.problems.Problem20;
-import leetcode.problems.Problem26;
-import leetcode.problems.Problem33;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class RunLeetCodeProblem {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		Problem19 p19 = new Problem19();
-		p19.run();
+		if (args.length == 0) {
+			System.out.println("args empty. Run with a list of problem numbers that you want to run.");
+		}
 
-		Problem33 p33 = new Problem33();
-		p33.run();
+		// create class for each problem number in args and call its run() method.
+		String className;
+		for (String i : args) {
+			className = "leetcode.problems.Problem" + i;
 
-		Problem20 p20 = new Problem20();
-		p20.run();
-
-		Problem26 p26 = new Problem26();
-		p26.run();
-
+			try {
+				Class<?> clazz = Class.forName(className);
+				Constructor<?> ctor = clazz.getConstructor();
+				Object object = ctor.newInstance();
+				Method run = clazz.getMethod("run");
+				run.invoke(object);
+				System.out.println(className + ": success!");
+			} catch (Exception e) {
+				System.out.println(className + ": failed: " + e.toString());
+			}
+		}
 	}
 }
