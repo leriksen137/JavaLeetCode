@@ -75,27 +75,12 @@ public class Problem33 {
 
 	public void run() {
 
-		int[] nums = new int[] { 1, 3 };
-		int target = 0;
+		int[] nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
+		int target = 5;
 
-		if (search(nums, target) != -1) {
-			System.out.println("Failed");
-			return;
-		}
+		int position = search(nums, target);
 
-		nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
-		target = 5;
-		if (search(nums, target) != 1) {
-			System.out.println("Failed");
-			return;
-		}
-
-		nums = new int[] { 1, 3 };
-		target = 2;
-		if (search(nums, target) != -1) {
-			System.out.println("Failed");
-			return;
-		}
+		assert position == 1 : "nums[1] = 5, failed to find correct solution.";
 
 	}
 }

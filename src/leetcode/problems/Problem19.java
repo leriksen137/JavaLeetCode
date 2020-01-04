@@ -33,11 +33,11 @@ public class Problem19 {
 
 	public void run() {
 		ListNode head = ListNode.fromArray(new int[] { 1, 2, 3, 4, 5 });
+		int n = 2; // remove second to last element
 
-		ListNode.printLinkedList(head);
+		removeNthFromEnd(head, n);
 
-		removeNthFromEnd(head, 5);
+		assert head.toString().equals("1->2->3->5") : "should've eliminated ListNode 4";
 
-		ListNode.printLinkedList(head);
 	}
 }

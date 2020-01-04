@@ -18,7 +18,9 @@ public class ListNode {
 		return headCopy;
 	}
 
-	public static void printLinkedList(ListNode head) {
+	@Override
+	public String toString() {
+		ListNode head = this;
 		StringBuilder str = new StringBuilder();
 		while (head.next != null) {
 			str.append(head.val);
@@ -26,6 +28,6 @@ public class ListNode {
 			head = head.next;
 		}
 		str.append(head.val);
-		System.out.println(str.toString());
+		return str.toString();
 	}
 }

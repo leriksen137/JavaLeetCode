@@ -36,19 +36,18 @@ public class Problem18 {
 			Collections.sort(list);
 		}
 
-		// check for duplicates
-//		boolean duplicateFound = false;
-//		while (!duplicateFound) {
-//			duplicateFound = false;
-//			for (int i = 0; i < solutionSet.size() && !duplicateFound; i++) {
-//				for (int j = i + 1; j < solutionSet.size() && !duplicateFound; j++) {
-//					if (solutionSet.get(i).equals(solutionSet.get(j))) {
-//						solutionSet.remove(j);
-//						duplicateFound = true;
-//					}
-//				}
-//			}
-//		}
+		boolean noDuplicates = false;
+		while (!noDuplicates) {
+			noDuplicates = true;
+			for (int i = 0; i < solutionSet.size() && noDuplicates; i++) {
+				for (int j = i + 1; j < solutionSet.size() && noDuplicates; j++) {
+					if (solutionSet.get(i).equals(solutionSet.get(j))) {
+						solutionSet.remove(j);
+						noDuplicates = false;
+					}
+				}
+			}
+		}
 
 		return solutionSet;
 	}
@@ -59,13 +58,11 @@ public class Problem18 {
 
 		List<List<Integer>> solutionSet = fourSum(nums, target);
 
-		System.out.println(solutionSet.toString());
-
 		assert solutionSet.size() == 3 : "Number of solutions wrong";
 
 		// check that sum is zero
 		for (List<Integer> list : solutionSet) {
-			assert ListUtil.sum(list) == 0 : "ERROR: Sum not equal to zero";
+			assert ListUtil.sum(list) == target : "ERROR: Sum not equal to target";
 		}
 
 		// check for no duplicates

@@ -61,6 +61,8 @@ public class Problem20 {
 	}
 
 	public void run() {
+		// this method was built on an old version of a problem template.
+
 		addExamples();
 
 		for (Map.Entry<String, Boolean> example : examples.entrySet()) {
