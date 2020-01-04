@@ -2,7 +2,7 @@ package leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 import leetcode.helper.ListUtil;
@@ -15,41 +15,24 @@ import leetcode.helper.ListUtil;
 public class Problem18 {
 
 	public List<List<Integer>> fourSum(int[] nums, int target) {
-		List<List<Integer>> solutionSet = new ArrayList<>();
+		HashSet<List<Integer>> solutionSet = new HashSet<>();
+		Arrays.sort(nums);
+
 		int length = nums.length;
 		for (int i = 0; i < length - 3; i++) {
 			for (int j = i + 1; j < length - 2; j++) {
 				for (int k = j + 1; k < length - 1; k++) {
 					for (int m = k + 1; m < length; m++) {
-						if (nums[i] + nums[j] + nums[k] + nums[m] == 0) {
+						if (nums[i] + nums[j] + nums[k] + nums[m] == target) {
 							// add solution. Automatically converts int to Integer (autoboxing)
-							solutionSet.add(new ArrayList<Integer>(Arrays.asList(nums[i], nums[j], nums[k], nums[m])));
+							solutionSet.add(Arrays.asList(nums[i], nums[j], nums[k], nums[m]));
 
 						}
 					}
 				}
 			}
 		}
-
-		// sort all lists for easier comparison
-		for (List<Integer> list : solutionSet) {
-			Collections.sort(list);
-		}
-
-		boolean noDuplicates = false;
-		while (!noDuplicates) {
-			noDuplicates = true;
-			for (int i = 0; i < solutionSet.size() && noDuplicates; i++) {
-				for (int j = i + 1; j < solutionSet.size() && noDuplicates; j++) {
-					if (solutionSet.get(i).equals(solutionSet.get(j))) {
-						solutionSet.remove(j);
-						noDuplicates = false;
-					}
-				}
-			}
-		}
-
-		return solutionSet;
+		return new ArrayList<List<Integer>>(solutionSet);
 	}
 
 	public void run() {
