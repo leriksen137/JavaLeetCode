@@ -7,7 +7,7 @@ import leetcode.datastructures.ListNode;
  * "https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Remove Nth
  * Node From End of List</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class Problem19 {
 

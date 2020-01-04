@@ -7,7 +7,7 @@ import java.util.Arrays;
  * "https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in
  * Rotated Sorted Array</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class Problem33 {
 

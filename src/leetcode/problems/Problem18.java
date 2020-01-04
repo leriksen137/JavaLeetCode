@@ -10,7 +10,7 @@ import leetcode.helper.ListUtil;
 /**
  * Solution to <a href= "https://leetcode.com/problems/4sum/">4Sum</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class Problem18 {
 

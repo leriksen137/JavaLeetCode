@@ -10,7 +10,7 @@ import leetcode.helper.PrimitiveIntArrayWrapper;
  * "https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove
  * Duplicates from Sorted Array</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class Problem26 {
 

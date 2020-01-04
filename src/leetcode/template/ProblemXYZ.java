@@ -6,7 +6,7 @@ package leetcode.template;
 /**
  * Solution to <a href= "URL">PROBLEMNAME</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class ProblemXYZ {
 	// TODO change XYZ to problem number, update URL and PROBLEMNAME in javadoc

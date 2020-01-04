@@ -8,7 +8,7 @@ import java.util.Stack;
  * Solution to <a href="https://leetcode.com/problems/valid-parentheses/">Valid
  * Parentheses</a>
  * 
- * @author Laurent Eriksen
+ * @author leriksen137
  */
 public class Problem20 {
 
