@@ -8,7 +8,7 @@ package leetcode.template;
  * 
  * @author leriksen137
  */
-public class ProblemXYZ implements LeetCode {
+public class ProblemXYZ2 implements LeetCode {
 	// TODO change XYZ to problem number, update URL and PROBLEMNAME in javadoc
 
 	// TODO copy problem Signature from specific leetcode problem.
