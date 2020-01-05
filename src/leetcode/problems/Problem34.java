@@ -65,10 +65,5 @@ public class Problem34 implements LeetCode {
 		int[] solution = searchRange(nums, target);
 
 		assert solution[0] == 3 && solution[1] == 4 : "Wrong output";
-
-		nums = new int[] { 1, 1, 1, 3, 4, 4, 4 };
-		target = 4;
-		solution = searchRange(nums, target);
-
 	}
 }
