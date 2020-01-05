@@ -1,10 +1,8 @@
 package leetcode.problems;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import leetcode.template.LeetCode;
 
@@ -19,35 +17,34 @@ import leetcode.template.LeetCode;
  */
 public class Problem39 implements LeetCode {
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
-		// create a result variable: Set of List of Integers
-		Set<List<Integer>> solutions = new HashSet<List<Integer>>();
+		List<List<Integer>> solutions = new ArrayList<>();
 
-		// call a recursive function
+		if (candidates.length == 0) {
+			return solutions;
+		}
 
-		recCombinationSum(candidates, target, new ArrayList<Integer>(), solutions);
+		Arrays.sort(candidates);
 
-		// convert solutions from set of list of integers to list of list of integers
+		recCombinationSum(candidates, target, new ArrayList<Integer>(), 0, solutions);
+
 		return new ArrayList<>(solutions);
 	}
 
-	private void recCombinationSum(int[] candidates, int target, List<Integer> currentSolution,
-			Set<List<Integer>> solutions) {
-		for (int i = 0; i < candidates.length; i++) {
-			if (target - candidates[i] == 0) {
-				// add candidates[i] to current solution, sort it, then add this solution to the
-				// set of solutions
+	private void recCombinationSum(int[] candidates, int target, List<Integer> currentSolution, int idx,
+			List<List<Integer>> solutions) {
+		if (target < 0) {
+			return;
+		} else if (target == 0) {
+			solutions.add(new ArrayList<>(currentSolution));
+			return;
+		} else {
+			for (int i = idx; i < candidates.length; i++) {
+				if (target < candidates[i]) {
+					return;
+				}
 				currentSolution.add(candidates[i]);
-				Collections.sort(currentSolution);
-				solutions.add(currentSolution);
-				break;
-			} else if (target - candidates[i] > 0) {
-				// recursive calls with newTarget = target-candidates[i]
-				currentSolution.add(candidates[i]);
-				recCombinationSum(candidates, target - candidates[i], new ArrayList<Integer>(currentSolution),
-						solutions);
-			} else {
-				System.out.println("When do I fist get here?");
-				break;
+				recCombinationSum(candidates, target - candidates[i], currentSolution, i, solutions);
+				currentSolution.remove(currentSolution.size() - 1);
 			}
 		}
 	}
