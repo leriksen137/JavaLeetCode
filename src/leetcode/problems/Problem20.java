@@ -74,7 +74,7 @@ public class Problem20 implements LeetCode {
 
 			Boolean myOutput = isValid(exampleInput);
 
-			assert myOutput.compareTo(exampleOutput) != 0 : "Assertion failed in " + this.getClass().getName();
+			assert myOutput.compareTo(exampleOutput) == 0 : "Assertion failed in " + this.getClass().getName();
 		}
 	}
 

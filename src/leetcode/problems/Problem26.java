@@ -47,7 +47,7 @@ public class Problem26 implements LeetCode {
 
 			Integer myOutput = removeDuplicates(exampleInput.getArray());
 
-			assert myOutput.compareTo(exampleOutput) != 0 : "Assertion failed in " + this.getClass().getName();
+			assert myOutput.compareTo(exampleOutput) == 0 : "Assertion failed in " + this.getClass().getName();
 		}
 	}
 }
