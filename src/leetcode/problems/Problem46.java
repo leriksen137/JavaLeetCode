@@ -7,9 +7,6 @@ import java.util.stream.Collectors;
 
 import leetcode.template.LeetCode;
 
-// Template for a new problem.
-// Copy into leetcode.problems and follow all TODO comments.
-
 /**
  * Solution to
  * <a href= "https://leetcode.com/problems/permutations/">Permutations</a>

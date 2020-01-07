@@ -6,9 +6,6 @@ import java.util.List;
 
 import leetcode.template.LeetCode;
 
-// Template for a new problem.
-// Copy into leetcode.problems and follow all TODO comments.
-
 /**
  * Solution to
  * <a href= "https://leetcode.com/problems/combination-sum/">Combination Sum</a>

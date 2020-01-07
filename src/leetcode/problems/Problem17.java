@@ -8,9 +8,6 @@ import java.util.Map;
 
 import leetcode.template.LeetCode;
 
-// Template for a new problem.
-// Copy into leetcode.problems and follow all TODO comments.
-
 /**
  * Solution to <a href=
  * "https://leetcode.com/problems/letter-combinations-of-a-phone-number/">Letter

@@ -2,9 +2,6 @@ package leetcode.problems;
 
 import leetcode.template.LeetCode;
 
-// Template for a new problem.
-// Copy into leetcode.problems and follow all TODO comments.
-
 /**
  * Solution to <a href=
  * "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Find

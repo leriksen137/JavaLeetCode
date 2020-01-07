@@ -3,9 +3,6 @@ package leetcode.problems;
 import leetcode.helper.DoubleArrayUtil;
 import leetcode.template.LeetCode;
 
-// Template for a new problem.
-// Copy into leetcode.problems and follow all TODO comments.
-
 /**
  * Solution to <a href= "https://leetcode.com/problems/rotate-image/">Rotate
  * Image</a>
