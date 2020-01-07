@@ -19,11 +19,11 @@ public class RunLeetCodeProblem {
 	public static void main(String[] args) throws IOException {
 		checkFlags();
 
-		System.out.println("Enter a LeetCode problem number. Enter 'all' for all. Enter anything else to exit.");
-
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		while (true) {
+
+			System.out.println("Enter a LeetCode problem number. Enter 'all' for all. Enter anything else to exit.");
 
 			String consoleInput = reader.readLine();
 
@@ -60,14 +60,17 @@ public class RunLeetCodeProblem {
 	}
 
 	public static void runAllLeetCodeProblems() {
-		// TODO change this
-		Reflections ref = new Reflections("com.farenda.java.lang");
+
+		Reflections ref = new Reflections("leetcode.problems");
 		for (Class<?> cl : ref.getTypesAnnotatedWith(LeetCodeAnnotation.class)) {
-			LeetCodeAnnotation findable = cl.getAnnotation(LeetCodeAnnotation.class);
-			System.out.printf("Found class: %s, with meta name: %s%n", cl.getSimpleName(), findable.name());
+			LeetCodeAnnotation leetCodeProblemClass = cl.getAnnotation(LeetCodeAnnotation.class);
+			System.out.println(
+					cl.getSimpleName() + " - " + leetCodeProblemClass.name() + " - " + leetCodeProblemClass.url());
+			// TODO actually run them
 		}
 
-		System.out.print("All Problems solved");
+		System.out.print("All Problems solved. Exiting");
+		return;
 	}
 
 	private static void runLeetCodeProblem(String className) {
@@ -82,7 +85,6 @@ public class RunLeetCodeProblem {
 		} catch (ClassNotFoundException e) {
 			System.out.println("---ERROR: Can't find anything for: " + className);
 		} catch (InvocationTargetException e) {
-			e.printStackTrace();
 			System.out.println("---ERROR: assert failed in " + className);
 		} catch (Exception e) {
 			e.printStackTrace();
