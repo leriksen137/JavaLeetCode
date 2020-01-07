@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to
- * <a href= "https://leetcode.com/problems/permutations/">Permutations</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Permutations", url = "https://leetcode.com/problems/permutations/")
 public class Problem46 implements LeetCode {
 	public List<List<Integer>> permute(int[] numsArray) {
 		List<Integer> nums = Arrays.stream(numsArray).boxed().collect(Collectors.toList());
@@ -46,6 +46,6 @@ public class Problem46 implements LeetCode {
 
 		List<List<Integer>> solution = permute(nums);
 
-		assert solution.size() == 6 : "Wrong number of permutations";
+		assert solution.size() == 6 : "Assertion failed in " + this.getClass().getName();
 	}
 }

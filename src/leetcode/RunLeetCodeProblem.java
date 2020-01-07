@@ -10,25 +10,34 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
+import org.reflections.Reflections;
+
+import leetcode.template.LeetCodeAnnotation;
+
 public class RunLeetCodeProblem {
 
 	public static void main(String[] args) throws IOException {
 		checkFlags();
 
-		System.out.println("Type Problem Number you would like to run and press enter. Type anything else to exit.");
+		System.out.println("Enter a LeetCode problem number. Enter 'all' for all. Enter anything else to exit.");
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		while (true) {
 
-			String consoleInputNumber = reader.readLine();
+			String consoleInput = reader.readLine();
 
-			if (!checkInput(consoleInputNumber)) {
+			if (consoleInput.equals("all")) {
+				runAllLeetCodeProblems();
+				return;
+			}
+
+			if (!checkInput(consoleInput)) {
 				System.out.println("Exiting");
 				return;
 			}
 
-			runLeetCodeProblem("leetcode.problems.Problem" + consoleInputNumber);
+			runLeetCodeProblem("leetcode.problems.Problem" + consoleInput);
 		}
 	}
 
@@ -48,6 +57,17 @@ public class RunLeetCodeProblem {
 		} catch (NumberFormatException e) {
 			return false;
 		}
+	}
+
+	public static void runAllLeetCodeProblems() {
+		// TODO change this
+		Reflections ref = new Reflections("com.farenda.java.lang");
+		for (Class<?> cl : ref.getTypesAnnotatedWith(LeetCodeAnnotation.class)) {
+			LeetCodeAnnotation findable = cl.getAnnotation(LeetCodeAnnotation.class);
+			System.out.printf("Found class: %s, with meta name: %s%n", cl.getSimpleName(), findable.name());
+		}
+
+		System.out.print("All Problems solved");
 	}
 
 	private static void runLeetCodeProblem(String className) {

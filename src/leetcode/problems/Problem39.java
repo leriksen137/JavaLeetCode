@@ -5,13 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to
- * <a href= "https://leetcode.com/problems/combination-sum/">Combination Sum</a>
- * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Combination Sum", url = "https://leetcode.com/problems/combination-sum/")
 public class Problem39 implements LeetCode {
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		List<List<Integer>> solutions = new ArrayList<>();
@@ -53,8 +52,8 @@ public class Problem39 implements LeetCode {
 
 		List<List<Integer>> solution = combinationSum(candidates, target);
 
-		assert solution.size() == 2 : "Wrong number of solutions";
-		assert solution.get(0).size() < 4 : "Solution too big";
+		assert solution.size() == 2 : "Assertion failed in " + this.getClass().getName();
+		assert solution.get(0).size() < 4 : "Assertion failed in " + this.getClass().getName();
 
 	}
 }

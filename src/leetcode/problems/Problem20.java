@@ -5,13 +5,13 @@ import java.util.Map;
 import java.util.Stack;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href="https://leetcode.com/problems/valid-parentheses/">Valid
- * Parentheses</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Valid Parentheses", url = "https://leetcode.com/problems/valid-parentheses/")
 public class Problem20 implements LeetCode {
 
 	public boolean isValid(String input) {
@@ -74,19 +74,7 @@ public class Problem20 implements LeetCode {
 
 			Boolean myOutput = isValid(exampleInput);
 
-			try {
-				if (myOutput.compareTo(exampleOutput) != 0) {
-					System.out.println("Failed");
-					System.out.println("\tInput:    " + exampleInput.toString());
-					System.out.println("\tExpected: " + exampleOutput.toString());
-					System.out.println("\tReturned: " + myOutput.toString());
-					return;
-				}
-			} catch (NullPointerException e) {
-				System.out.println("Failed");
-				System.out.println("\tNullPointerException on calculating result for: " + exampleInput.toString());
-				return;
-			}
+			assert myOutput.compareTo(exampleOutput) != 0 : "Assertion failed in " + this.getClass().getName();
 		}
 	}
 

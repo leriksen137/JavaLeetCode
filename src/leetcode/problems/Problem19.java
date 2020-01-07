@@ -2,14 +2,13 @@ package leetcode.problems;
 
 import leetcode.datastructures.ListNode;
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Remove Nth
- * Node From End of List</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Remove Nth Node From End of List", url = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/")
 public class Problem19 implements LeetCode {
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -39,7 +38,7 @@ public class Problem19 implements LeetCode {
 
 		removeNthFromEnd(head, n);
 
-		assert head.toString().equals("1->2->3->5") : "should've eliminated ListNode 4";
+		assert head.toString().equals("1->2->3->5") : "Assertion failed in " + this.getClass().getName();
 
 	}
 }

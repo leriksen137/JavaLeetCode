@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to
- * <a href= "https://leetcode.com/problems/generate-parentheses/">Generate
- * Parentheses</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Generate Parentheses", url = "https://leetcode.com/problems/generate-parentheses/")
 public class Problem22 implements LeetCode {
 
 	public List<String> generateParenthesis(int n) {
@@ -46,6 +45,6 @@ public class Problem22 implements LeetCode {
 
 		List<String> solution = generateParenthesis(n);
 
-		assert solution.size() == 5 : "For n=3 there should be 5 combinations of well-formed parenthese.";
+		assert solution.size() == 5 : "Assertion failed in " + this.getClass().getName();
 	}
 }

@@ -1,14 +1,13 @@
 package leetcode.problems;
 
-import leetcode.helper.DoubleArrayUtil;
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href= "https://leetcode.com/problems/rotate-image/">Rotate
- * Image</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Rotate Image", url = "https://leetcode.com/problems/rotate-image/")
 public class Problem48 implements LeetCode {
 	public void rotate(int[][] matrix) {
 		int n = matrix[0].length;
@@ -29,12 +28,8 @@ public class Problem48 implements LeetCode {
 	public void run() {
 		int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-		DoubleArrayUtil.printDoubleArrayInt(matrix);
-
 		rotate(matrix);
 
-		DoubleArrayUtil.printDoubleArrayInt(matrix);
-
-		assert matrix[0][0] == 7 && matrix[0][1] == 4 : "Rotation incorrect";
+		assert matrix[0][0] == 7 && matrix[0][1] == 4 : "Assertion failed in " + this.getClass().getName();
 	}
 }

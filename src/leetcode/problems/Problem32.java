@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Stack;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to
- * <a href= "https://leetcode.com/problems/longest-valid-parentheses/">Longest
- * Valid Parentheses</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Longest Valid Parentheses", url = "https://leetcode.com/problems/longest-valid-parentheses/")
 public class Problem32 implements LeetCode {
 
 	// probably has to be O(n)
@@ -59,21 +58,23 @@ public class Problem32 implements LeetCode {
 	@Override
 	public void run() {
 
+		assert 0 == 1 : "Assertion failed in " + this.getClass().getName();
+
 		String s0 = "())";
 		int solution = longestValidParentheses(s0);
-		assert solution == 2 : "Result should be 2.";
+		assert solution == 2 : "Assertion failed in " + this.getClass().getName();
 
 		String s1 = "(()()";
 		solution = longestValidParentheses(s1);
-		assert solution == 4 : "Result should be 4 for " + s1;
+		assert solution == 4 : "Assertion failed in " + this.getClass().getName();
 
 		String s2 = "()((())";
 		solution = longestValidParentheses(s2);
-		assert solution == 4 : "Result should be 4 for " + s2;
+		assert solution == 4 : "Assertion failed in " + this.getClass().getName();
 
 		String s3 = "()(()";
 		solution = longestValidParentheses(s3);
-		assert solution == 2 : "Result should be 2.";
+		assert solution == 2 : "Assertion failed in " + this.getClass().getName();
 
 		String s4 = "())((()()(()(((()())))))))((((((())()(()()(())()))(()))(()()())((((((()())()()()(()))())(((()(()(())(()((()())())))((()(((()(()((()())())))(())))()))))))))))())()))((())()()()()))((()))(((()))()(()))()((()()()(()))(((()()()()((()()(()())))(())))))))()))))()))()((()())())(()))(((()()()((())())())(((())((()))(())(())()))))(())))()())())()(()))))(())))(())))(()((())(())))((()(()))((((()))))()((()()()())()(())(()(()()())()((())(()((()()()())()))((()))))()))())))))))()((()()))()()()()))(()()()()(())()(()))))()(((((()(((((((()(((())()))(()())()(()))(()(()((()((((()))))()(())(()))))()(()(((((((()))((()(()(()))(()())(()())()(())()(()((((()))))()()()(((())()())()))())()(())))(()()))))(())))))((((()))))(((((()))((((()))((())))))((())))())((((((((()(()((())))()))()()))))))))(((()(()())(()))((())((())(()))))))))((())()()())(()(())()))))((())())(()(())((()())))))((())((())())()(()))(())()()()((((()(()()))()(()(((((()())())())))())()))()))(()())()((()()()()((())()())(((())(((()(()()(((((((()(((()((((()(()((())))())())(())()(()())()((())()()()))()(()())()))()())))()()())))()(((((()()))(())(((()())))(())(())())(())(()()())))()())()))(()))))(()())()(()))((((())()())(())(((()())(()((((((((()))((((())())()((()()())())()()()())()()((()())(()()))((()()))()))(((()((()()(()))()(())()())((())())()(((())))(())((()((())(()()()(()(()))((()((((()(()()(())(()()))))(())()(()()))))())()((())(()))()()(()()()((()))(()))))())((()(()((";
 		solution = longestValidParentheses(s4);

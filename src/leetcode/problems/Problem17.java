@@ -7,14 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/letter-combinations-of-a-phone-number/">Letter
- * Combinations of a Phone Number</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Letter Combinations of a Phone Number", url = "https://leetcode.com/problems/letter-combinations-of-a-phone-number/")
 public class Problem17 implements LeetCode {
 	private Map<Character, String> numToChars;
 
@@ -67,8 +66,6 @@ public class Problem17 implements LeetCode {
 
 		List<String> solution = letterCombinations(input);
 
-		solution = letterCombinations("");
-
-		assert solution.size() == 9 : "Wrong output";
+		assert solution.size() == 9 : "Assertion failed in " + this.getClass().getName();
 	}
 }

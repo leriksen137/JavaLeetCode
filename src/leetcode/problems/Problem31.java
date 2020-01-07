@@ -1,13 +1,13 @@
 package leetcode.problems;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href= "https://leetcode.com/problems/next-permutation/">Next
- * Permutation</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Next Permutation", url = "https://leetcode.com/problems/next-permutation/")
 public class Problem31 implements LeetCode {
 
 	public void nextPermutation(int[] nums) {
@@ -22,12 +22,13 @@ public class Problem31 implements LeetCode {
 		}
 	}
 
-	// NOT SOLVED YET
 	@Override
 	public void run() {
 		int[] nums = new int[] { 2, 3, 4, 1 };
-		// 3 1 2 4
 
-		assert nums[0] == 2 : "Wrong solution";
+		nextPermutation(nums);
+
+		assert null != null : "Assertion failed in " + this.getClass().getName();
+
 	}
 }
