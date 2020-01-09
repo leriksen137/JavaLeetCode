@@ -5,14 +5,13 @@ import java.util.Map;
 
 import leetcode.helper.PrimitiveIntArrayWrapper;
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove
- * Duplicates from Sorted Array</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Remove Duplicates from Sorted Array", url = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/")
 public class Problem26 implements LeetCode {
 
 	public int removeDuplicates(int[] nums) {
@@ -48,21 +47,7 @@ public class Problem26 implements LeetCode {
 
 			Integer myOutput = removeDuplicates(exampleInput.getArray());
 
-			try {
-				if (myOutput.compareTo(exampleOutput) != 0) {
-					System.out.println("Failed");
-					System.out.println("\tInput:    " + exampleInput.toString());
-					System.out.println("\tExpected: " + exampleOutput.toString());
-					System.out.println("\tReturned: " + myOutput.toString());
-					return;
-				}
-			} catch (NullPointerException e) {
-				System.out.println("Failed");
-				System.out.println("\tNullPointerException on calculating result for: " + exampleInput.toString());
-				return;
-			}
+			assert myOutput.compareTo(exampleOutput) == 0 : "Assertion failed in " + this.getClass().getName();
 		}
-
 	}
-
 }

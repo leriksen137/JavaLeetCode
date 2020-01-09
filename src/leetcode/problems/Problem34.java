@@ -1,14 +1,13 @@
 package leetcode.problems;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Find
- * First and Last Position of Element in Sorted Array</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Find First and Last Position of Element in Sorted Array", url = "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/")
 public class Problem34 implements LeetCode {
 	public int[] searchRange(int[] nums, int target) {
 		int[] solution = new int[2];
@@ -61,6 +60,6 @@ public class Problem34 implements LeetCode {
 
 		int[] solution = searchRange(nums, target);
 
-		assert solution[0] == 3 && solution[1] == 4 : "Wrong output";
+		assert solution[0] == 3 && solution[1] == 4 : "Assertion failed in " + this.getClass().getName();
 	}
 }

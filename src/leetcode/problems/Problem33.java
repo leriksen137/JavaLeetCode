@@ -3,14 +3,13 @@ package leetcode.problems;
 import java.util.Arrays;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in
- * Rotated Sorted Array</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Search in Rotated Sorted Array", url = "https://leetcode.com/problems/search-in-rotated-sorted-array/")
 public class Problem33 implements LeetCode {
 
 	public int search(int[] nums, int target) {
@@ -83,7 +82,6 @@ public class Problem33 implements LeetCode {
 
 		int position = search(nums, target);
 
-		assert position == 1 : "nums[1] = 5, failed to find correct solution.";
-
+		assert position == 1 : "Assertion failed in " + this.getClass().getName();
 	}
 }

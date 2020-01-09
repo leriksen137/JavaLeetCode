@@ -7,12 +7,13 @@ import java.util.List;
 
 import leetcode.helper.ListUtil;
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href= "https://leetcode.com/problems/4sum/">4Sum</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "4Sum", url = "https://leetcode.com/problems/4sum/")
 public class Problem18 implements LeetCode {
 
 	public List<List<Integer>> fourSum(int[] nums, int target) {
@@ -22,6 +23,7 @@ public class Problem18 implements LeetCode {
 		int length = nums.length;
 		for (int i = 0; i < length - 3; i++) {
 			for (int j = i + 1; j < length - 2; j++) {
+				// from here could reuse solution from "Two Sum" Problem 1
 				for (int k = j + 1; k < length - 1; k++) {
 					for (int m = k + 1; m < length; m++) {
 						if (nums[i] + nums[j] + nums[k] + nums[m] == target) {
@@ -43,18 +45,18 @@ public class Problem18 implements LeetCode {
 
 		List<List<Integer>> solutionSet = fourSum(nums, target);
 
-		assert solutionSet.size() == 3 : "Number of solutions wrong";
+		assert solutionSet.size() == 3 : "Assertion failed in " + this.getClass().getName();
 
 		// check that sum is zero
 		for (List<Integer> list : solutionSet) {
-			assert ListUtil.sum(list) == target : "ERROR: Sum not equal to target";
+			assert ListUtil.sum(list) == target : "Assertion failed in " + this.getClass().getName();
 		}
 
 		// check for no duplicates
 		for (List<Integer> list1 : solutionSet) {
 			for (List<Integer> list2 : solutionSet) {
 				if (list1 != list2) {
-					assert !list1.equals(list2) : "ERROR: duplicate solution";
+					assert !list1.equals(list2) : "Assertion failed in " + this.getClass().getName();
 				}
 			}
 		}

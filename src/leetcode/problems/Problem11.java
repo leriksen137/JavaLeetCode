@@ -1,14 +1,13 @@
 package leetcode.problems;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to
- * <a href= "https://leetcode.com/problems/container-with-most-water/">Container
- * With Most Water</a>
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Container With Most Water", url = "https://leetcode.com/problems/container-with-most-water/")
 public class Problem11 implements LeetCode {
 	public int maxArea(int[] height) {
 		int maxArea = 0;
@@ -41,6 +40,6 @@ public class Problem11 implements LeetCode {
 
 		int solution = maxArea(height);
 
-		assert solution == 49 : "Wrong amount of water!";
+		assert solution == 49 : "Assertion failed in " + this.getClass().getName();
 	}
 }

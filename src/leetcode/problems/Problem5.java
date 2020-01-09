@@ -1,14 +1,14 @@
 package leetcode.problems;
 
 import leetcode.template.LeetCode;
+import leetcode.template.LeetCodeAnnotation;
 
 /**
- * Solution to <a href=
- * "https://leetcode.com/problems/longest-palindromic-substring/">Longest
- * Palindromic Substring</a>
+ * Solution to
  * 
  * @author leriksen137
  */
+@LeetCodeAnnotation(name = "Longest Palindromic Substring", url = "https://leetcode.com/problems/longest-palindromic-substring/")
 public class Problem5 implements LeetCode {
 	// this should run in O(n);
 	public String longestPalindrome(String s) {
@@ -68,7 +68,7 @@ public class Problem5 implements LeetCode {
 
 		String solution = longestPalindrome(s);
 
-		assert solution.equals("bab") : "Returned wrong substring";
+		assert solution.equals("baab") : "Assertion failed in " + this.getClass().getName();
 	}
 
 	// This method works but is too inefficient.
