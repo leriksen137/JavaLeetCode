@@ -7,8 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface LeetCodeAnnotation {
-	String name();
-
-	String url();
+public @interface LeetCodeProblem {
+	String problemName();
 }

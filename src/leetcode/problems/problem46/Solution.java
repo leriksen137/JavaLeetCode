@@ -1,19 +1,17 @@
-package leetcode.problems;
+package leetcode.problems.problem46;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
- * 
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Permutations", url = "https://leetcode.com/problems/permutations/")
-public class Problem46 implements LeetCode {
+@LeetCodeProblem(problemName = "Permutations")
+public class Solution {
 	public List<List<Integer>> permute(int[] numsArray) {
 		List<Integer> nums = Arrays.stream(numsArray).boxed().collect(Collectors.toList());
 
@@ -38,14 +36,5 @@ public class Problem46 implements LeetCode {
 			remainingNums.add(i, temp);
 			track.remove(remainingNums.get(i));
 		}
-	}
-
-	@Override
-	public void run() {
-		int[] nums = new int[] { 1, 2, 3 };
-
-		List<List<Integer>> solution = permute(nums);
-
-		assert solution.size() == 6 : "Assertion failed in " + this.getClass().getName();
 	}
 }

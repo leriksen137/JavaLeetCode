@@ -1,4 +1,4 @@
-package leetcode.problems;
+package leetcode.problems.problem17;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,15 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
- * 
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Letter Combinations of a Phone Number", url = "https://leetcode.com/problems/letter-combinations-of-a-phone-number/")
-public class Problem17 implements LeetCode {
+@LeetCodeProblem(problemName = "Letter Combinations of a Phone Number")
+public class Solution {
 	private Map<Character, String> numToChars;
 
 	public List<String> letterCombinations(String digits) {
@@ -22,19 +20,15 @@ public class Problem17 implements LeetCode {
 			return Collections.emptyList();
 		}
 
-		numToChars = new HashMap<Character, String>() {
-			private static final long serialVersionUID = 1L;
-			{
-				put('2', "abc");
-				put('3', "def");
-				put('4', "ghi");
-				put('5', "jkl");
-				put('6', "mno");
-				put('7', "pqrs");
-				put('8', "tuv");
-				put('9', "wxyz");
-			}
-		};
+		numToChars = new HashMap<Character, String>();
+		numToChars.put('2', "abc");
+		numToChars.put('3', "def");
+		numToChars.put('4', "ghi");
+		numToChars.put('5', "jkl");
+		numToChars.put('6', "mno");
+		numToChars.put('7', "pqrs");
+		numToChars.put('8', "tuv");
+		numToChars.put('9', "wxyz");
 
 		List<String> results = new ArrayList<>();
 
@@ -58,14 +52,5 @@ public class Problem17 implements LeetCode {
 			// speedup expected if switching to StringBuilder or CharArray.
 			recursiveLetterCombinations(results, digits.substring(1), combination + chars.charAt(i));
 		}
-	}
-
-	@Override
-	public void run() {
-		String input = "23";
-
-		List<String> solution = letterCombinations(input);
-
-		assert solution.size() == 9 : "Assertion failed in " + this.getClass().getName();
 	}
 }

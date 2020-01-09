@@ -1,17 +1,16 @@
-package leetcode.problems;
+package leetcode.problems.problem39;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Combination Sum", url = "https://leetcode.com/problems/combination-sum/")
-public class Problem39 implements LeetCode {
+@LeetCodeProblem(problemName = "Combination Sum")
+public class Solution {
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		List<List<Integer>> solutions = new ArrayList<>();
 
@@ -43,17 +42,5 @@ public class Problem39 implements LeetCode {
 				currentSolution.remove(currentSolution.size() - 1);
 			}
 		}
-	}
-
-	@Override
-	public void run() {
-		int[] candidates = new int[] { 2, 3, 6, 7 };
-		int target = 7;
-
-		List<List<Integer>> solution = combinationSum(candidates, target);
-
-		assert solution.size() == 2 : "Assertion failed in " + this.getClass().getName();
-		assert solution.get(0).size() < 4 : "Assertion failed in " + this.getClass().getName();
-
 	}
 }

@@ -1,18 +1,16 @@
-package leetcode.problems;
+package leetcode.problems.problem34;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
- * 
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Find First and Last Position of Element in Sorted Array", url = "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/")
-public class Problem34 implements LeetCode {
+@LeetCodeProblem(problemName = "Find First and Last Position of Element in Sorted Array")
+public class Solution {
 	public int[] searchRange(int[] nums, int target) {
 		int[] solution = new int[2];
 
-		// ---binary search for start of range---
+		// binary search for start of range
 		int first = 0;
 		int last = nums.length - 1;
 		int mid = (first + last) / 2;
@@ -34,7 +32,7 @@ public class Problem34 implements LeetCode {
 		}
 		solution[0] = mid;
 
-		// ---binary search for end of range---
+		// binary search for end of range
 		first = 0;
 		last = nums.length - 1;
 		mid = (first + last) / 2;
@@ -51,15 +49,5 @@ public class Problem34 implements LeetCode {
 		solution[1] = mid;
 
 		return solution;
-	}
-
-	@Override
-	public void run() {
-		int[] nums = new int[] { 5, 7, 7, 8, 8, 10 };
-		int target = 8;
-
-		int[] solution = searchRange(nums, target);
-
-		assert solution[0] == 3 && solution[1] == 4 : "Assertion failed in " + this.getClass().getName();
 	}
 }

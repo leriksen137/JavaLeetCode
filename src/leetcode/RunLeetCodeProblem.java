@@ -13,9 +13,16 @@ import java.util.List;
 
 import org.reflections.Reflections;
 
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
+/**
+ * @author leriksen137
+ */
 public class RunLeetCodeProblem {
+	// TODO possible changes:
+	// 0 Create a wizard to start new problems
+	// 1 Run all tests in JUnit
+	// 2 Graphical User Interface in Swing
 
 	public static void main(String[] args) throws IOException {
 		checkFlags();
@@ -66,19 +73,19 @@ public class RunLeetCodeProblem {
 		List<String> otherFailure = new ArrayList<>();
 
 		Reflections ref = new Reflections("leetcode.problems");
-		for (Class<?> cl : ref.getTypesAnnotatedWith(LeetCodeAnnotation.class)) {
-			LeetCodeAnnotation leetCodeProblemClass = cl.getAnnotation(LeetCodeAnnotation.class);
+		for (Class<?> cl : ref.getTypesAnnotatedWith(LeetCodeProblem.class)) {
+			LeetCodeProblem leetCodeProblemClass = cl.getAnnotation(LeetCodeProblem.class);
 
 			try {
 				Constructor<?> ctor = cl.getConstructor();
 				Object object = ctor.newInstance();
 				Method run = cl.getMethod("run");
 				run.invoke(object);
-				success.add(cl.getSimpleName() + ": " + leetCodeProblemClass.name());
+				success.add(cl.getSimpleName() + ": " + leetCodeProblemClass.problemName());
 			} catch (InvocationTargetException e) {
-				assertionFailed.add(cl.getSimpleName() + ": " + leetCodeProblemClass.name());
+				assertionFailed.add(cl.getSimpleName() + ": " + leetCodeProblemClass.problemName());
 			} catch (Exception e) {
-				otherFailure.add(cl.getSimpleName() + ": " + leetCodeProblemClass.name());
+				otherFailure.add(cl.getSimpleName() + ": " + leetCodeProblemClass.problemName());
 			}
 
 		}

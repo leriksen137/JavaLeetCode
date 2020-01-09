@@ -1,17 +1,15 @@
-package leetcode.problems;
+package leetcode.problems.problem22;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
- * 
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Generate Parentheses", url = "https://leetcode.com/problems/generate-parentheses/")
-public class Problem22 implements LeetCode {
+@LeetCodeProblem(problemName = "Generate Parentheses")
+public class Solution {
 
 	public List<String> generateParenthesis(int n) {
 		List<String> solutions = new ArrayList<>();
@@ -37,14 +35,5 @@ public class Problem22 implements LeetCode {
 			generateParenthesesRecursive(str + ")", n, openParenthesesRemaining, closeParenthesesRemaining - 1,
 					solutions);
 		}
-	}
-
-	@Override
-	public void run() {
-		int n = 3;
-
-		List<String> solution = generateParenthesis(n);
-
-		assert solution.size() == 5 : "Assertion failed in " + this.getClass().getName();
 	}
 }

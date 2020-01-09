@@ -3,8 +3,8 @@ package leetcode.template;
 /**
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "TEMPLATE", url = "URL")
-public class ProblemTemplate implements LeetCode {
+@LeetCodeProblem(problemName = "TEMPLATE")
+public class SolutionTemplate {
 	// TODO Copy into leetcode.problems and follow all "TODO" comments.
 	// TODO Update problem name and LeetCode URL
 	// TODO Change class name to include problem number
@@ -13,7 +13,6 @@ public class ProblemTemplate implements LeetCode {
 		return "solution";
 	}
 
-	@Override
 	public void run() {
 		// TODO generate input arguments
 		int[] nums = new int[] { 1, 2, 3, 4 };

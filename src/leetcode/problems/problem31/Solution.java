@@ -1,16 +1,14 @@
-package leetcode.problems;
+package leetcode.problems.problem31;
 
 import java.util.Arrays;
 
-import leetcode.template.LeetCode;
-import leetcode.template.LeetCodeAnnotation;
+import leetcode.template.LeetCodeProblem;
 
 /**
- * 
  * @author leriksen137
  */
-@LeetCodeAnnotation(name = "Next Permutation", url = "https://leetcode.com/problems/next-permutation/")
-public class Problem31 implements LeetCode {
+@LeetCodeProblem(problemName = "Next Permutation")
+public class Solution {
 
 	public void nextPermutation(int[] nums) {
 		int startOfAscending = nums.length - 2;
@@ -36,14 +34,5 @@ public class Problem31 implements LeetCode {
 		int temp = nums[j];
 		nums[j] = nums[i];
 		nums[i] = temp;
-	}
-
-	@Override
-	public void run() {
-		int[] nums = new int[] { 2, 4, 3, 1 };
-
-		nextPermutation(nums);
-
-		assert Arrays.equals(nums, new int[] { 3, 1, 2, 4 }) : "Assertion failed in " + this.getClass().getName();
 	}
 }
