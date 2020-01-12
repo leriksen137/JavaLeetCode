@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,9 +12,15 @@ import org.junit.Test;
  */
 public class SolutionTest {
 
+	Solution s;
+
+	@Before
+	public void initializeSolution() {
+		s = new Solution();
+	}
+
 	@Test
 	public void testLetterCombinations() {
-		Solution s = new Solution();
 		String input = "23";
 		List<String> solution = s.letterCombinations(input);
 

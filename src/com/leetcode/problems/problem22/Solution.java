@@ -3,7 +3,7 @@ package com.leetcode.problems.problem22;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137

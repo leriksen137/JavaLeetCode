@@ -2,6 +2,7 @@ package com.leetcode.problems.problem32;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,10 +10,15 @@ import org.junit.Test;
  */
 public class SolutionTest {
 
+	Solution s;
+
+	@Before
+	public void initializeSolution() {
+		s = new Solution();
+	}
+
 	@Test
 	public void testLongestValidParentheses() {
-		Solution s = new Solution();
-
 		String s0 = "())";
 		int solution = s.longestValidParentheses(s0);
 		assertTrue(solution == 2);

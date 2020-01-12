@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,9 +12,15 @@ import org.junit.Test;
  */
 public class SolutionTest {
 
+	Solution s;
+
+	@Before
+	public void initializeSolution() {
+		s = new Solution();
+	}
+
 	@Test
 	public void testGenerateParenthesis() {
-		Solution s = new Solution();
 		int n = 3;
 		List<String> solution = s.generateParenthesis(n);
 		assertTrue(solution.size() == 5);

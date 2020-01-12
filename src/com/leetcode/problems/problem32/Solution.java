@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137

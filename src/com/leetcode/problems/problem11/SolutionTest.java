@@ -2,6 +2,7 @@ package com.leetcode.problems.problem11;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,10 +10,15 @@ import org.junit.Test;
  */
 public class SolutionTest {
 
+	Solution s;
+
+	@Before
+	public void initializeSolution() {
+		s = new Solution();
+	}
+
 	@Test
 	public void testMaxArea() {
-		Solution s = new Solution();
-
 		int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 		int solution = s.maxArea(height);
 		assertTrue(solution == 49);

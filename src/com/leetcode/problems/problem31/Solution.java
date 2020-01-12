@@ -2,7 +2,7 @@ package com.leetcode.problems.problem31;
 
 import java.util.Arrays;
 
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137

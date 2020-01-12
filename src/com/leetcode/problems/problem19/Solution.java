@@ -1,7 +1,7 @@
 package com.leetcode.problems.problem19;
 
-import com.leetcode.datastructures.ListNode;
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
+import com.leetcode.framework.datastructures.ListNode;
 
 /**
  * @author leriksen137

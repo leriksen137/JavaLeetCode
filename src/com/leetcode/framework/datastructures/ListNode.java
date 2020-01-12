@@ -1,4 +1,4 @@
-package com.leetcode.datastructures;
+package com.leetcode.framework.datastructures;
 
 public class ListNode {
 	public int val;

@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem26;
 
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137

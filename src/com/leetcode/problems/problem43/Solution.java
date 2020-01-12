@@ -2,7 +2,7 @@ package com.leetcode.problems.problem43;
 
 import java.math.BigInteger;
 
-import com.leetcode.framework.LeetCodeProblem;
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137

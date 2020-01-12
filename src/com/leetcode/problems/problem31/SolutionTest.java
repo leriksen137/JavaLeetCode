@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,9 +12,15 @@ import org.junit.Test;
  */
 public class SolutionTest {
 
+	Solution s;
+
+	@Before
+	public void initializeSolution() {
+		s = new Solution();
+	}
+
 	@Test
 	public void testNextPermutation() {
-		Solution s = new Solution();
 		int[] nums = new int[] { 2, 4, 3, 1 };
 		s.nextPermutation(nums);
 		assertTrue(Arrays.equals(nums, new int[] { 3, 1, 2, 4 }));
