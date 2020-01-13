@@ -37,7 +37,7 @@ public class LeetCode {
 			}
 		});
 
-		System.out.println("---List of all Solutions in this Project---");
+		System.out.println("---List of all " + leetCodeProblemClasses.size() + " Solutions in this Project---");
 		for (Class<?> leetCodeProblemClass : leetCodeProblemClasses) {
 			LeetCodeProblem leetCodeProblemAnnotation = leetCodeProblemClass.getAnnotation(LeetCodeProblem.class);
 			System.out.println(
