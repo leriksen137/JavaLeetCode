@@ -35,6 +35,7 @@ public class TreeNode {
 
 	public static void printGivenLevel(TreeNode root, int level) {
 		if (root == null) {
+			System.out.print("null,");
 			return;
 		}
 		if (level == 1) {
