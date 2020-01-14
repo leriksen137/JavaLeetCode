@@ -10,18 +10,18 @@ import org.junit.Test;
  * leriksen137
  */
 @Ignore("This is only a template")
-public class SolutionTestTemplate {
-	SolutionTemplate s;
+public class SolutionTest {
+	Solution s;
 
 	@Before
 	public void initializeSolution() {
-		s = new SolutionTemplate();
+		s = new Solution();
 	}
 
 	@Test
-	public void testMaxArea() {
+	public void testMethod() {
 		int[] nums = new int[] { 0 };
-		String solution = s.calculateSolution(nums);
-		assertTrue(solution.equals("solution"));
+		int solution = s.calculateSolution(nums);
+		assertTrue(solution == 0);
 	}
 }
