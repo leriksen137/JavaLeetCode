@@ -1,7 +1,5 @@
 package com.leetcode.problems.problem62;
 
-import java.math.BigInteger;
-
 import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
@@ -10,19 +8,19 @@ import com.leetcode.framework.annotations.LeetCodeProblem;
 @LeetCodeProblem(problemNumber = 62, problemName = "Unique Paths")
 public class Solution {
 	public int uniquePaths(int m, int n) {
-		BigInteger nBinomial = BigInteger.valueOf((n - 1) + (m - 1));
-		BigInteger kBinomial = BigInteger.valueOf(n - 1);
+		long nBinomial = ((n - 1) + (m - 1));
+		long kBinomial = (n - 1);
 
 		// C(n,k) = C(n,n-k)
-		if (kBinomial.compareTo((nBinomial.subtract(kBinomial))) == 1)
-			kBinomial = nBinomial.subtract(kBinomial);
+		if (kBinomial > nBinomial - kBinomial)
+			kBinomial = nBinomial - kBinomial;
 
-		BigInteger binomialCoefficientNK = BigInteger.ONE;
-		for (BigInteger i = BigInteger.ONE; i.compareTo(kBinomial) < 1; i = i.add(BigInteger.ONE)) {
-			binomialCoefficientNK = binomialCoefficientNK.multiply(nBinomial.add(BigInteger.ONE).subtract(i));
-			binomialCoefficientNK = binomialCoefficientNK.divide(i);
+		long binomialCoefficientNK = 1;
+		for (long i = 1; i <= kBinomial; i++) {
+			binomialCoefficientNK *= nBinomial + 1 - i;
+			binomialCoefficientNK /= i;
 		}
 
-		return binomialCoefficientNK.intValue();
+		return (int) binomialCoefficientNK;
 	}
 }
