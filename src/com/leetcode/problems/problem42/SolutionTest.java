@@ -22,4 +22,11 @@ public class SolutionTest {
 		int solution = s.trap(nums);
 		assertTrue(solution == 6);
 	}
+
+	@Test
+	public void testTrappingRainWaterEdgeCase() {
+		int[] nums = new int[0];
+		int solution = s.trap(nums);
+		assertTrue(solution == 0);
+	}
 }
