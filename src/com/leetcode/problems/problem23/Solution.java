@@ -1,5 +1,8 @@
 package com.leetcode.problems.problem23;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 import com.leetcode.framework.annotations.LeetCodeProblem;
 import com.leetcode.framework.datastructures.ListNode;
 
@@ -11,67 +14,33 @@ public class Solution {
 	public ListNode mergeKLists(ListNode[] lists) {
 		// Array size N
 		// Length of individual Listnode in Array L
-
-		// Naïve solution: O(N^2*L)
-		// Allocate new memory for each output node
-		int numberOfNodes = numberOfNodesInAllLinkedLists(lists);
-		ListNode solution = createEmptyLinkedListOfSize(numberOfNodes);
-		ListNode nextToModify = solution;
-		for (int i = 0; i < numberOfNodes; i++) {
-			int smallest = getSmallestElementInLinkedLists(lists);
-			removeValueFromLinkedLists(lists, smallest);
-
-			nextToModify.val = smallest;
-			nextToModify = nextToModify.next;
-		}
-
-		return solution;
-	}
-
-	private int numberOfNodesInAllLinkedLists(ListNode[] lists) {
-		int result = 0;
-		ListNode ptr;
-		for (int i = 0; i < lists.length; i++) {
-			ptr = lists[i];
-			while (ptr != null) {
-				result++;
-				ptr = ptr.next;
-			}
-		}
-		return result;
-	}
-
-	private ListNode createEmptyLinkedListOfSize(int numberOfElements) {
-		if (numberOfElements == 0) {
+		// Total amount of nodes: O(N*L)
+		// For each element in solution, go through priority queue and retrieve an element O(1)
+		// and add one to the queue O(ln(N))
+		// Total complexity: O(L*N*ln(N))
+		ListNode dummy = new ListNode(0), cur = dummy;
+		if (lists == null || lists.length < 1) {
 			return null;
 		}
-		ListNode head = new ListNode(0);
-		ListNode ptr = head;
-		for (int i = 1; i < numberOfElements; i++) {
-			ptr.next = new ListNode(0);
-			ptr = ptr.next;
-		}
-		return head;
-	}
-
-	private int getSmallestElementInLinkedLists(ListNode[] lists) {
-		int smallest = Integer.MAX_VALUE;
+		PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
+			@Override
+			public int compare(ListNode l1, ListNode l2) {
+				return l1.val - l2.val;
+			}
+		});
 		for (int i = 0; i < lists.length; i++) {
 			if (lists[i] != null) {
-				if (lists[i].val < smallest) {
-					smallest = lists[i].val;
-				}
+				minHeap.offer(lists[i]);
 			}
 		}
-		return smallest;
-	}
-
-	private void removeValueFromLinkedLists(ListNode[] lists, int toRemove) {
-		for (int i = 0; i < lists.length; i++) {
-			if (lists[i] != null && lists[i].val == toRemove) {
-				lists[i] = lists[i].next;
-				return;
+		while (!minHeap.isEmpty()) {
+			ListNode temp = minHeap.poll();
+			cur.next = temp;
+			if (temp.next != null) {
+				minHeap.offer(temp.next);
 			}
+			cur = temp;
 		}
+		return dummy.next;
 	}
 }
