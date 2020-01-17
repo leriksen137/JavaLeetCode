@@ -1,21 +1,18 @@
 package com.leetcode.framework;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
+import com.leetcode.framework.annotations.LeetCodeProblem;
 import org.reflections.Reflections;
 
-import com.leetcode.framework.annotations.LeetCodeProblem;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author leriksen137
  */
 public class LeetCode {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		displayAllLeetCodeProblems();
 	}
 
@@ -29,19 +26,18 @@ public class LeetCode {
 			return;
 		}
 
-		Collections.sort(leetCodeProblemClasses, new Comparator<Class<?>>() {
-			@Override
-			public int compare(Class<?> o1, Class<?> o2) {
-				return Integer.compare(o1.getAnnotation(LeetCodeProblem.class).problemNumber(),
-						o2.getAnnotation(LeetCodeProblem.class).problemNumber());
-			}
-		});
+		leetCodeProblemClasses.sort(Comparator.comparingInt((Class<?> o) -> o.getAnnotation(LeetCodeProblem.class).problemNumber()));
 
 		System.out.println("---List of all " + leetCodeProblemClasses.size() + " Solutions in this Project---");
 		for (Class<?> leetCodeProblemClass : leetCodeProblemClasses) {
 			LeetCodeProblem leetCodeProblemAnnotation = leetCodeProblemClass.getAnnotation(LeetCodeProblem.class);
-			System.out.println(
-					leetCodeProblemAnnotation.problemNumber() + ":\t-\t" + leetCodeProblemAnnotation.problemName());
+			StringBuilder lineBuilder = new StringBuilder();
+			lineBuilder.append(leetCodeProblemAnnotation.problemNumber()).append(":");
+			if (leetCodeProblemAnnotation.problemNumber() < 100) {
+				lineBuilder.append("\t");
+			}
+			lineBuilder.append("\t-\t").append(leetCodeProblemAnnotation.problemName());
+			System.out.println(lineBuilder.toString());
 		}
 	}
 }
