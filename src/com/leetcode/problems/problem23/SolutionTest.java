@@ -39,6 +39,6 @@ public class SolutionTest {
 		ListNode[] lists = new ListNode[] { ln00, ln10, ln20 };
 
 		ListNode solution = s.mergeKLists(lists);
-		assertTrue(solution.toString() == "1->1->2->3->4->4->5->6");
+		assertTrue(solution.toString().equals("1->1->2->3->4->4->5->6"));
 	}
 }
