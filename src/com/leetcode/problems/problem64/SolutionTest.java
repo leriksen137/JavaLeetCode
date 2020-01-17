@@ -17,9 +17,16 @@ public class SolutionTest {
 	}
 
 	@Test
-	public void testMethod() {
+	public void testMinPathExample() {
 		int[][] grid = new int[][] { { 1, 3, 1 }, { 1, 5, 1 }, { 4, 2, 1 } };
 		int solution = s.minPathSum(grid);
 		assertTrue(solution == 7);
+	}
+
+	@Test
+	public void testMinPathEdgeCase() {
+		int[][] grid = new int[][] { {} };
+		int solution = s.minPathSum(grid);
+		assertTrue(solution == 0);
 	}
 }
