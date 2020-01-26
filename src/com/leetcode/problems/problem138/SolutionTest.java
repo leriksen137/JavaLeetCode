@@ -34,7 +34,9 @@ public class SolutionTest {
 		n3.random = n2;
 		n4.random = head;
 
+		System.out.println(head.toString());
+
 		Node copy = s.copyRandomList(head);
-		assertEquals("7", copy.toString());
+		assertEquals(copy.toString(), "[[7,null],[13,0],[11,4],[10,2],[1,0]]");
 	}
 }
