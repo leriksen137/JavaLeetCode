@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem62;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class SolutionTest {
 		int m = 3;
 		int n = 2;
 		int solution = s.uniquePaths(m, n);
-		assertTrue(solution == 3);
+		assertEquals(solution, 3);
 	}
 
 	@Test
@@ -29,6 +29,6 @@ public class SolutionTest {
 		int m = 10;
 		int n = 10;
 		int solution = s.uniquePaths(m, n);
-		assertTrue(solution == 48620);
+		assertEquals(solution, 48620);
 	}
 }

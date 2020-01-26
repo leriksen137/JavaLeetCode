@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem5;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +21,6 @@ public class SolutionTest {
 		String input = "motbaab";
 		String solution = s.longestPalindrome(input);
 
-		assertTrue(solution.equals("baab"));
+		assertEquals(solution, "baab");
 	}
 }

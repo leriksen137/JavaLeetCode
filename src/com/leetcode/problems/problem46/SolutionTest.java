@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem46;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -22,6 +22,6 @@ public class SolutionTest {
 	public void testPermute() {
 		int[] nums = new int[] { 1, 2, 3 };
 		List<List<Integer>> solution = s.permute(nums);
-		assertTrue(solution.size() == 6);
+		assertEquals(solution.size(), 6);
 	}
 }

@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem19;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,6 +24,6 @@ public class SolutionTest {
 		ListNode head = ListNode.fromArray(new int[] { 1, 2, 3, 4, 5 });
 		int n = 2;
 		s.removeNthFromEnd(head, n);
-		assertTrue(head.toString().equals("1->2->3->5"));
+		assertEquals(head.toString(), "1->2->3->5");
 	}
 }

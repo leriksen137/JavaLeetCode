@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem22;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -23,6 +23,6 @@ public class SolutionTest {
 	public void testGenerateParenthesis() {
 		int n = 3;
 		List<String> solution = s.generateParenthesis(n);
-		assertTrue(solution.size() == 5);
+		assertEquals(solution.size(), 5);
 	}
 }

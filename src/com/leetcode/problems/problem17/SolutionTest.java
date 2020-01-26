@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem17;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -24,6 +24,6 @@ public class SolutionTest {
 		String input = "23";
 		List<String> solution = s.letterCombinations(input);
 
-		assertTrue(solution.size() == 9);
+		assertEquals(solution.size(), 9);
 	}
 }

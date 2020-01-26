@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem4;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +10,7 @@ import org.junit.Test;
  */
 public class SolutionTest {
 	Solution s;
+	private final double TEST_PRECISION = 1e-15;
 
 	@Before
 	public void initializeSolution() {
@@ -21,7 +22,7 @@ public class SolutionTest {
 		int[] nums1 = new int[] { 1, 3 };
 		int[] nums2 = new int[] { 2 };
 		double solution = s.findMedianSortedArrays(nums1, nums2);
-		assertTrue(solution == 2.0);
+		assertEquals(solution, 2.0, TEST_PRECISION);
 	}
 
 	@Test
@@ -29,6 +30,6 @@ public class SolutionTest {
 		int[] nums1 = new int[] { 1, 2 };
 		int[] nums2 = new int[] { 3, 4 };
 		double solution = s.findMedianSortedArrays(nums1, nums2);
-		assertTrue(solution == 2.5);
+		assertEquals(solution, 2.5, TEST_PRECISION);
 	}
 }

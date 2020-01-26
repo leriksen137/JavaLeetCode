@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem28;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class SolutionTest {
 		String haystack = "hello";
 		String needle = "ll";
 		int solution = s.strStr(haystack, needle);
-		assertTrue(solution == 2);
+		assertEquals(solution, 2);
 	}
 
 	@Test
@@ -29,6 +29,6 @@ public class SolutionTest {
 		String haystack = "aaaaa";
 		String needle = "bba";
 		int solution = s.strStr(haystack, needle);
-		assertTrue(solution == -1);
+		assertEquals(solution, -1);
 	}
 }

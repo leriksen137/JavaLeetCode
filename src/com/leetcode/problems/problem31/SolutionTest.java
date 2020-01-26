@@ -1,8 +1,6 @@
 package com.leetcode.problems.problem31;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +21,6 @@ public class SolutionTest {
 	public void testNextPermutation() {
 		int[] nums = new int[] { 2, 4, 3, 1 };
 		s.nextPermutation(nums);
-		assertTrue(Arrays.equals(nums, new int[] { 3, 1, 2, 4 }));
+		assertArrayEquals(nums, new int[] { 3, 1, 2, 4 });
 	}
 }

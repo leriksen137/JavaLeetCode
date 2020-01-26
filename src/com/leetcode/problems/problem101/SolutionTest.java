@@ -1,5 +1,6 @@
 package com.leetcode.problems.problem101;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -34,8 +35,7 @@ public class SolutionTest {
 		n2.left = n5;
 		n2.right = n6;
 
-		boolean solution = s.isSymmetric(root);
-		assertTrue(solution == true);
+		assertTrue(s.isSymmetric(root));
 	}
 
 	@Test
@@ -50,8 +50,7 @@ public class SolutionTest {
 		n1.right = n4;
 		n2.right = n6;
 
-		boolean solution = s.isSymmetric(root);
-		assertTrue(solution == false);
+		assertFalse(s.isSymmetric(root));
 	}
 
 	@Test
@@ -62,7 +61,6 @@ public class SolutionTest {
 		root.left = n1;
 		n1.right = n2;
 
-		boolean solution = s.isSymmetric(root);
-		assertTrue(solution == false);
+		assertFalse(s.isSymmetric(root));
 	}
 }

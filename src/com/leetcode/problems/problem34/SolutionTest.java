@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem34;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class SolutionTest {
 		int[] nums = new int[] { 5, 7, 7, 8, 8, 10 };
 		int target = 8;
 		int[] solution = s.searchRange(nums, target);
-		assertTrue(solution[0] == 3);
-		assertTrue(solution[1] == 4);
+		assertEquals(solution[0], 3);
+		assertEquals(solution[1], 4);
 	}
 }

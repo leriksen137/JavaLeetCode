@@ -1,6 +1,6 @@
 package com.leetcode.framework.templates;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -22,6 +22,7 @@ public class SolutionTest {
 	public void testMethod() {
 		int[] nums = new int[] { 0 };
 		int solution = s.calculateSolution(nums);
-		assertTrue(solution == 0);
+
+		assertEquals(solution, 0);
 	}
 }

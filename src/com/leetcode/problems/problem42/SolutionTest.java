@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem42;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,13 +20,13 @@ public class SolutionTest {
 	public void testTrappingRainWater() {
 		int[] nums = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
 		int solution = s.trap(nums);
-		assertTrue(solution == 6);
+		assertEquals(solution, 6);
 	}
 
 	@Test
 	public void testTrappingRainWaterEdgeCase() {
 		int[] nums = new int[0];
 		int solution = s.trap(nums);
-		assertTrue(solution == 0);
+		assertEquals(solution, 0);
 	}
 }

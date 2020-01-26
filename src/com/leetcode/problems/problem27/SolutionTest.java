@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem27;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
 
@@ -23,7 +23,7 @@ public class SolutionTest {
 		int[] nums = new int[] { 3, 2, 2, 3 };
 		int val = 3;
 		int solutionLength = s.removeElement(nums, val);
-		assertTrue(Arrays.equals(Arrays.copyOfRange(nums, 0, solutionLength), new int[] { 2, 2 }));
+		assertArrayEquals(Arrays.copyOfRange(nums, 0, solutionLength), new int[] { 2, 2 });
 	}
 
 	@Test
@@ -31,6 +31,6 @@ public class SolutionTest {
 		int[] nums = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
 		int val = 2;
 		int solutionLength = s.removeElement(nums, val);
-		assertTrue(Arrays.equals(Arrays.copyOfRange(nums, 0, solutionLength), new int[] { 0, 1, 3, 0, 4 }));
+		assertArrayEquals(Arrays.copyOfRange(nums, 0, solutionLength), new int[] { 0, 1, 3, 0, 4 });
 	}
 }

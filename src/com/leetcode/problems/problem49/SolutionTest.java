@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem49;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -22,6 +22,6 @@ public class SolutionTest {
 	public void testGroupAnagramsSize() {
 		String[] strs = new String[] { "eat", "tea", "tan", "ate", "nat", "bat" };
 		List<List<String>> solution = s.groupAnagrams(strs);
-		assertTrue(solution.size() == 3);
+		assertEquals(solution.size(), 3);
 	}
 }

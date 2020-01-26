@@ -1,6 +1,7 @@
 package com.leetcode.problems.problem18;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.List;
 
@@ -29,13 +30,13 @@ public class SolutionTest {
 
 	@Test
 	public void testFourSumSize() {
-		assertTrue(solutionSet.size() == 3);
+		assertEquals(solutionSet.size(), 3);
 	}
 
 	@Test
 	public void testFourSumEqualsTarget() {
 		for (List<Integer> list : solutionSet) {
-			assertTrue(s.sum(list) == target);
+			assertEquals(s.sum(list), target);
 		}
 	}
 
@@ -44,7 +45,7 @@ public class SolutionTest {
 		for (List<Integer> list1 : solutionSet) {
 			for (List<Integer> list2 : solutionSet) {
 				if (list1 != list2) {
-					assertTrue(!list1.equals(list2));
+					assertNotEquals(list1, list2);
 				}
 			}
 		}

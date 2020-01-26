@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem70;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,13 +20,13 @@ public class SolutionTest {
 	public void testClimbingStairsExample1() {
 		int n = 2;
 		int solution = s.climbStairs(n);
-		assertTrue(solution == 2);
+		assertEquals(solution, 2);
 	}
 
 	@Test
 	public void testClimbingStairsExample2() {
 		int n = 3;
 		int solution = s.climbStairs(n);
-		assertTrue(solution == 3);
+		assertEquals(solution, 3);
 	}
 }

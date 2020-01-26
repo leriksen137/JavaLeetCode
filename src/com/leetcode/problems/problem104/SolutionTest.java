@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem104;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +31,6 @@ public class SolutionTest {
 		n2.right = n6;
 
 		int solution = s.maxDepth(root);
-		assertTrue(solution == 3);
+		assertEquals(solution, 3);
 	}
 }

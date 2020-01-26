@@ -1,5 +1,6 @@
 package com.leetcode.problems.problem55;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -20,13 +21,13 @@ public class SolutionTest {
 	public void testcanJumpExample1() {
 		int[] nums = new int[] { 2, 3, 1, 1, 4 };
 		boolean solution = s.canJump(nums);
-		assertTrue(solution == true);
+		assertTrue(solution);
 	}
 
 	@Test
 	public void testcanJumpExample2() {
 		int[] nums = new int[] { 3, 2, 1, 0, 4 };
 		boolean solution = s.canJump(nums);
-		assertTrue(solution == false);
+		assertFalse(solution);
 	}
 }

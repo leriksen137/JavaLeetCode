@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem75;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
 
@@ -21,10 +21,11 @@ public class SolutionTest {
 	@Test
 	public void testSortColors() {
 		int[] nums = new int[] { 2, 0, 2, 1, 1, 0 };
-		int[] nums2 = new int[] { 2, 0, 2, 1, 1, 0 };
-		Arrays.sort(nums2);
+
+		int[] numsSorted = new int[] { 2, 0, 2, 1, 1, 0 };
+		Arrays.sort(numsSorted);
 
 		s.sortColors(nums);
-		assertTrue(Arrays.equals(nums, nums2));
+		assertArrayEquals(nums, numsSorted);
 	}
 }
