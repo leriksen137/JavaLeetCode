@@ -19,16 +19,16 @@ public class SolutionTest {
 	@Test
 	public void testMergeIntervalsExample1() {
 		int[][] intervals = new int[][] { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
-		int[][] solution = s.merge(intervals);
-
-		assertArrayEquals(solution, new int[][] { { 1, 6 }, { 8, 10 }, { 15, 18 } });
+		int[][] actual = s.merge(intervals);
+		int[][] expected = new int[][] { { 1, 6 }, { 8, 10 }, { 15, 18 } };
+		assertArrayEquals(expected, actual);
 	}
 
 	@Test
 	public void testMergeIntervalsExample2() {
 		int[][] intervals = new int[][] { { 1, 3 }, { 3, 4 } };
-		int[][] solution = s.merge(intervals);
-
-		assertArrayEquals(solution, new int[][] { { 1, 4 } });
+		int[][] actual = s.merge(intervals);
+		int[][] expected = new int[][] { { 1, 4 } };
+		assertArrayEquals(expected, actual);
 	}
 }

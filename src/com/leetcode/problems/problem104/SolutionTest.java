@@ -30,7 +30,8 @@ public class SolutionTest {
 		n2.left = n5;
 		n2.right = n6;
 
-		int solution = s.maxDepth(root);
-		assertEquals(solution, 3);
+		int actual = s.maxDepth(root);
+		int expected = 3;
+		assertEquals(actual, expected);
 	}
 }

@@ -9,6 +9,6 @@ import com.leetcode.framework.datastructures.Node;
 @LeetCodeProblem(problemNumber = 138, problemName = "Copy List with Random Pointer")
 public class Solution {
 	public Node copyRandomList(Node head) {
-		return null;
+		return new Node(0);
 	}
 }

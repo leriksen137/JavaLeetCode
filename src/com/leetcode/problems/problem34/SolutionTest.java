@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem34;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,11 +18,20 @@ public class SolutionTest {
 	}
 
 	@Test
-	public void testSearchRange() {
+	public void testSearchRangeExample1() {
 		int[] nums = new int[] { 5, 7, 7, 8, 8, 10 };
 		int target = 8;
-		int[] solution = s.searchRange(nums, target);
-		assertEquals(solution[0], 3);
-		assertEquals(solution[1], 4);
+		int[] actual = s.searchRange(nums, target);
+		int[] expected = new int[] { 3, 4 };
+		assertArrayEquals(expected, actual);
+	}
+
+	@Test
+	public void testSearchRangeExample2() {
+		int[] nums = new int[] { 5, 7, 7, 8, 8, 10 };
+		int target = 6;
+		int[] actual = s.searchRange(nums, target);
+		int[] expected = new int[] { -1, -1 };
+		assertArrayEquals(expected, actual);
 	}
 }

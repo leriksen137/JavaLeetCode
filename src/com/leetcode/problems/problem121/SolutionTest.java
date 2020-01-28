@@ -19,14 +19,16 @@ public class SolutionTest {
 	@Test
 	public void testMaxProfitExample1() {
 		int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
-		int solution = s.maxProfit(prices);
-		assertEquals(solution, 5);
+		int actual = s.maxProfit(prices);
+		int expected = 5;
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testMaxProfitExample2() {
 		int[] prices = new int[] { 7, 6, 4, 3, 1 };
-		int solution = s.maxProfit(prices);
-		assertEquals(solution, 0);
+		int actual = s.maxProfit(prices);
+		int expected = 0;
+		assertEquals(expected, actual);
 	}
 }

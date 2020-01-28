@@ -19,8 +19,8 @@ public class SolutionTest {
 	@Test
 	public void testLongestPalindrome() {
 		String input = "motbaab";
-		String solution = s.longestPalindrome(input);
-
-		assertEquals(solution, "baab");
+		String actual = s.longestPalindrome(input);
+		String expected = "baab";
+		assertEquals(expected, actual);
 	}
 }

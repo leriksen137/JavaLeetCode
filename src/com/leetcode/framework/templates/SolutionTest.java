@@ -19,10 +19,14 @@ public class SolutionTest {
 	}
 
 	@Test
-	public void testMethod() {
-		int[] nums = new int[] { 0 };
-		int solution = s.calculateSolution(nums);
+	public void testTemplateTestName() {
+		// create input
 
-		assertEquals(solution, 0);
+		// calculate "actual"
+		int actual = s.calculateSolution();
+		// create "expected"
+		int expected = 0;
+
+		assertEquals(expected, actual);
 	}
 }

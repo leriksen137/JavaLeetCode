@@ -20,15 +20,17 @@ public class SolutionTest {
 	public void testUniquePathsSmallExample() {
 		int m = 3;
 		int n = 2;
-		int solution = s.uniquePaths(m, n);
-		assertEquals(solution, 3);
+		int actual = s.uniquePaths(m, n);
+		int expected = 3;
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testUniquePathsBigExample() {
 		int m = 10;
 		int n = 10;
-		int solution = s.uniquePaths(m, n);
-		assertEquals(solution, 48620);
+		int actual = s.uniquePaths(m, n);
+		int expected = 48620;
+		assertEquals(expected, actual);
 	}
 }

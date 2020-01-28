@@ -20,7 +20,8 @@ public class SolutionTest {
 	public void testMultiply() {
 		String num1 = "123";
 		String num2 = "456";
-		String solution = s.multiply(num1, num2);
-		assertEquals(solution, "56088");
+		String actual = s.multiply(num1, num2);
+		String expected = "56088";
+		assertEquals(expected, actual);
 	}
 }

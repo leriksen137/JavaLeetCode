@@ -21,6 +21,7 @@ public class SolutionTest {
 	public void testNextPermutation() {
 		int[] nums = new int[] { 2, 4, 3, 1 };
 		s.nextPermutation(nums);
-		assertArrayEquals(nums, new int[] { 3, 1, 2, 4 });
+		int[] expected = new int[] { 3, 1, 2, 4 };
+		assertArrayEquals(nums, expected);
 	}
 }

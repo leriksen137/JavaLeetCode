@@ -19,14 +19,16 @@ public class SolutionTest {
 	@Test
 	public void testSingleNumberExample1() {
 		int[] nums = new int[] { 2, 2, 1 };
-		int solution = s.singleNumber(nums);
-		assertEquals(solution, 1);
+		int actual = s.singleNumber(nums);
+		int expected = 1;
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testSingleNumberExample2() {
 		int[] nums = new int[] { 4, 1, 2, 1, 2 };
-		int solution = s.singleNumber(nums);
-		assertEquals(solution, 4);
+		int actual = s.singleNumber(nums);
+		int expected = 4;
+		assertEquals(expected, actual);
 	}
 }

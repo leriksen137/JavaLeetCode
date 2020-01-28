@@ -20,19 +20,23 @@ public class SolutionTest {
 	@Test
 	public void testLongestValidParentheses() {
 		String s0 = "())";
-		int solution = s.longestValidParentheses(s0);
-		assertEquals(solution, 2);
+		int actual = s.longestValidParentheses(s0);
+		int expected = 2;
+		assertEquals(expected, actual);
 
 		String s1 = "(()()";
-		solution = s.longestValidParentheses(s1);
-		assertEquals(solution, 4);
+		actual = s.longestValidParentheses(s1);
+		expected = 4;
+		assertEquals(expected, actual);
 
 		String s2 = "()((())";
-		solution = s.longestValidParentheses(s2);
-		assertEquals(solution, 4);
+		actual = s.longestValidParentheses(s2);
+		expected = 4;
+		assertEquals(expected, actual);
 
 		String s3 = "()(()";
-		solution = s.longestValidParentheses(s3);
-		assertEquals(solution, 2);
+		actual = s.longestValidParentheses(s3);
+		expected = 2;
+		assertEquals(expected, actual);
 	}
 }

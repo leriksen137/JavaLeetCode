@@ -20,7 +20,8 @@ public class SolutionTest {
 	@Test
 	public void testRemoveDuplicates() {
 		int[] nums = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-		int solution = s.removeDuplicates(nums);
-		assertEquals(solution, 5);
+		int actual = s.removeDuplicates(nums);
+		int expected = 5;
+		assertEquals(expected, actual);
 	}
 }

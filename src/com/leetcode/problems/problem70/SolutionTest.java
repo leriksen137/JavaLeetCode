@@ -19,14 +19,16 @@ public class SolutionTest {
 	@Test
 	public void testClimbingStairsExample1() {
 		int n = 2;
-		int solution = s.climbStairs(n);
-		assertEquals(solution, 2);
+		int actual = s.climbStairs(n);
+		int expected = 2;
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testClimbingStairsExample2() {
 		int n = 3;
-		int solution = s.climbStairs(n);
-		assertEquals(solution, 3);
+		int actual = s.climbStairs(n);
+		int expected = 3;
+		assertEquals(expected, actual);
 	}
 }

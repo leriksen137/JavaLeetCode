@@ -20,7 +20,8 @@ public class SolutionTest {
 	@Test
 	public void testMaxArea() {
 		int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
-		int solution = s.maxArea(height);
-		assertEquals(solution, 49);
+		int actual = s.maxArea(height);
+		int expected = 49;
+		assertEquals(actual, expected);
 	}
 }

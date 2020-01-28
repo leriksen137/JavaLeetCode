@@ -15,7 +15,7 @@ public class Solution {
 	// Write Test for the problem #TDD
 	// Solve the problem
 
-	public int calculateSolution(int[] nums) {
+	public int calculateSolution() {
 		return 0;
 	}
 }

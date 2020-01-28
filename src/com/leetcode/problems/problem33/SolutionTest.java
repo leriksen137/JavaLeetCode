@@ -21,7 +21,8 @@ public class SolutionTest {
 	public void testSearch() {
 		int[] nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
 		int target = 5;
-		int position = s.search(nums, target);
-		assertEquals(position, 1);
+		int actual = s.search(nums, target);
+		int expected = 1;
+		assertEquals(expected, actual);
 	}
 }

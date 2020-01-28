@@ -1,6 +1,6 @@
 package com.leetcode.problems.problem48;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class SolutionTest {
 	public void testRotate() {
 		int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 		s.rotate(matrix);
-		assertEquals(matrix[0][0], 7);
-		assertEquals(matrix[0][1], 4);
+		int[][] expected = new int[][] { { 7, 4, 1 }, { 8, 5, 2 }, { 9, 6, 3 } };
+		assertArrayEquals(matrix, expected);
 	}
 }
