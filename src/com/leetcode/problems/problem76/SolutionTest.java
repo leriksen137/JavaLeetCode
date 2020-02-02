@@ -24,4 +24,13 @@ public class SolutionTest {
 		String expected = "BANC";
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	public void testMinWindowNoResult() {
+		String s = "ILIKETURTLES";
+		String t = "XYZ";
+		String actual = solution.minWindow(s, t);
+		String expected = "";
+		assertEquals(expected, actual);
+	}
 }
