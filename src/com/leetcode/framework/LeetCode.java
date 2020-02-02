@@ -1,11 +1,12 @@
 package com.leetcode.framework;
 
-import com.leetcode.framework.annotations.LeetCodeProblem;
-import org.reflections.Reflections;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import org.reflections.Reflections;
+
+import com.leetcode.framework.annotations.LeetCodeProblem;
 
 /**
  * @author leriksen137
@@ -26,18 +27,14 @@ public class LeetCode {
 			return;
 		}
 
-		leetCodeProblemClasses.sort(Comparator.comparingInt((Class<?> o) -> o.getAnnotation(LeetCodeProblem.class).problemNumber()));
+		leetCodeProblemClasses
+				.sort(Comparator.comparingInt((Class<?> o) -> o.getAnnotation(LeetCodeProblem.class).problemNumber()));
 
 		System.out.println("---List of all " + leetCodeProblemClasses.size() + " Solutions in this Project---");
 		for (Class<?> leetCodeProblemClass : leetCodeProblemClasses) {
 			LeetCodeProblem leetCodeProblemAnnotation = leetCodeProblemClass.getAnnotation(LeetCodeProblem.class);
-			StringBuilder lineBuilder = new StringBuilder();
-			lineBuilder.append(leetCodeProblemAnnotation.problemNumber()).append(":");
-			if (leetCodeProblemAnnotation.problemNumber() < 100) {
-				lineBuilder.append("\t");
-			}
-			lineBuilder.append("\t-\t").append(leetCodeProblemAnnotation.problemName());
-			System.out.println(lineBuilder.toString());
+			System.out.println(
+					leetCodeProblemAnnotation.problemNumber() + "\t-\t" + leetCodeProblemAnnotation.problemName());
 		}
 	}
 }
