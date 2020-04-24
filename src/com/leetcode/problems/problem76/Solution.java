@@ -8,6 +8,7 @@ import com.leetcode.framework.annotations.LeetCodeProblem;
 @LeetCodeProblem(problemNumber = 76, problemName = "Minimum Window Substring")
 public class Solution {
 	public String minWindow(String s, String t) {
+
 		return "";
 	}
 }
